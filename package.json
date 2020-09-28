@@ -1,0 +1,27 @@
+{
+  "name": "fe-study",
+  "version": "1.0.0",
+  "description": "Front-end Study",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umiyo/fe-study.git"
+  },
+  "author": "umiyo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/umiyo/fe-study/issues"
+  },
+  "homepage": "https://github.com/umiyo/fe-study#readme",
+  "devDependencies": {
+    "vuepress": "^1.6.0"
+  },
+  "dependencies": {
+    "vue-toasted": "^1.1.28"
+  }
+}
