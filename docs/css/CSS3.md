@@ -72,6 +72,10 @@ display属性：
 ```
 :::
 
+### 兼容性
+
+<Compatibility />
+
 ### 主轴与交叉轴
 
 弹性容器的主轴与交叉轴是由属性`flex-direction`定义的。`flex-direction`属性的值为`row`或`row-recerse`时，主轴为水平方向；`flex-direction`属性的值为`column`或`column-recerse`时，主轴为垂直方向；
