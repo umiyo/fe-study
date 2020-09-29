@@ -1,19 +1,19 @@
 <template>
 <div class="axis">
     <div class="container row">
-        <span>原点(start)</span>
+        <span>主轴(start)</span>
         <p>flex-direction: row;</p>
     </div>
     <div class="container row-reverse">
-        <span>原点(start)</span>
+        <span>主轴(start)</span>
         <p>flex-direction: row-reverse;</p>
     </div>
     <div class="container column">
-        <span>原点(start)</span>
+        <span>主轴(start)</span>
         <p>flex-direction: column;</p>
     </div>
     <div class="container column-reverse">
-        <span>原点(start)</span>
+        <span>主轴(start)</span>
         <p>flex-direction: column-reverse;</p>
     </div>
 </div>
