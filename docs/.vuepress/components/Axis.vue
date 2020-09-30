@@ -1,18 +1,18 @@
 <template>
 <div class="axis">
-    <div class="container row">
+    <div class="container row" style="flex: 0 0 23%;">
         <span>主轴(start)</span>
         <p>flex-direction: row;</p>
     </div>
-    <div class="container row-reverse">
+    <div class="container row-reverse" style="flex: 0 0 23%;">
         <span>主轴(start)</span>
         <p>flex-direction: row-reverse;</p>
     </div>
-    <div class="container column">
+    <div class="container column" style="flex: 0 0 23%;">
         <span>主轴(start)</span>
         <p>flex-direction: column;</p>
     </div>
-    <div class="container column-reverse">
+    <div class="container column-reverse" style="flex: 0 0 23%;">
         <span>主轴(start)</span>
         <p>flex-direction: column-reverse;</p>
     </div>
@@ -25,32 +25,25 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .axis {
     display: flex;
     justify-content: space-between;
 }
 .container {
     position: relative;
-    flex: 0 0 24%;
     height: 400px;
     font-size: 24px;
     text-align: center;
-    color: #fff;
-    &:nth-child(2n - 1) {
-        background: #e6c0bc;
-    }
-    &:nth-child(2n) {
-        background: #69c39b;
-    }
+    color: #333;
     &::before,
     &::after {
         position: absolute;
         content: "";
         border: solid #f96628;
-        border-width: 0 2px 2px 0;
+        border-width: 0 4px 4px 0;
         display: inline-block;
-        padding: 6px;
+        padding: 8px;
     }
 
     span {
@@ -66,10 +59,10 @@ export default {
     }
 }
 .row {
-    border-top: 2px solid #f00;
-    border-left: 2px solid #f00;
+    border-top: 4px solid #f00;
+    border-left: 4px solid #f00;
     &::before {
-        top: -8px;
+        top: -12px;
         right: 0;
         transform: rotate(-45deg);
     }
@@ -86,10 +79,10 @@ export default {
     }
 }
 .row-reverse {
-    border-top: 2px solid #f00;
-    border-right: 2px solid #f00;
+    border-top: 4px solid #f00;
+    border-right: 4px solid #f00;
     &::before {
-        top: -8px;
+        top: -12px;
         left: 0;
         transform: rotate(135deg);
     }
@@ -106,8 +99,8 @@ export default {
     }
 }
 .column {
-    border-top: 2px solid #f00;
-    border-left: 2px solid #f00;
+    border-top: 4px solid #f00;
+    border-left: 4px solid #f00;
     &::before {
         top: -8px;
         right: 0;
@@ -115,7 +108,7 @@ export default {
         display: none;
     }
     &::after {
-        left: -8px;
+        left: -12px;
         bottom: 0;
         transform: rotate(45deg);
     }
@@ -127,11 +120,11 @@ export default {
     }
 }
 .column-reverse {
-    border-bottom: 2px solid #f00;
-    border-left: 2px solid #f00;
+    border-bottom: 4px solid #f00;
+    border-left: 4px solid #f00;
     &::before {
         top: 0;
-        left: -8px;
+        left: -12px;
         transform: rotate(-135deg);
     }
     &::after {

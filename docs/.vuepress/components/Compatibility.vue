@@ -11,6 +11,7 @@
 
 <script>
 export default {
+    name: 'Compatibility',
     data() {
         return {
             list: [
