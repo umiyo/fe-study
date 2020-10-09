@@ -53,6 +53,9 @@ display: [ flex | inline-flex ]
     line-height: 150px;
     text-align: center;
 }
+.flex-item.auto {
+    width: auto;
+}
 .flex-item:nth-child(2n - 1) {
     background: #1da0de;
 }
@@ -154,61 +157,84 @@ flex-wrap: [ flex-direction || flex-wrap ];
 justify-content: [ normal | &lt;content-distribution&gt; | &lt;overflow-position&gt; ? [ &lt;content-position&gt; | left | right ] ]
 
 默认值：flex-start
-
-`left`: 
-
-`right`:
 :::
-
-<JustifyContent />
 
 ::: details content-distribution
-`space-between`: 
+`space-between`: 每行均匀分配弹性元素，相邻元素间间隔相等。
 
-`space-around`:
+`space-around`: 每行平均分配弹性元素，各弹性元素两侧间隔相等。
 
-`space-evenly`:
+`space-evenly`: 每行平均分配弹性元素，各弹性元素间间隔相等。
 
-`stretch`: 
-:::
+`stretch`: 空间不足时自动按各元素比例调整。
 
 <JustifyContent type="distribution" />
+:::
 
 ::: details overflow-position
-`unsafe`:
+`unsafe`: 与&lt;content-position&gt;对齐关键字一起使用，不管子元素和容器的相对大小，都使用给定的对齐值。
 
-`safe`:
-:::
+`safe`: 与&lt;content-position&gt;对齐关键字一起使用，如果选定的关键字导致溢出，将使用start代替。
 
 <JustifyContent type="overflow" />
-
-::: details content-position
-`center`: 
-
-`start`:
-
-`end`:
-
-`flex-start`:
-
-`flex-end`:
 :::
 
+::: details content-position
+`center`: 伸缩元素向每行中点排列，每行第一个元素到行首与最后一个到行尾的距离相等。
+
+`start`: 从行首开始排列，每行第一个元素与行首对齐，后续与前一个对齐。
+
+`end`: 从行尾开始排列，每行最后一个元素与行尾对齐，其他元素与后一个对齐。
+
+`flex-start`: 从行首开始排列，每行第一个弹性元素与行首对齐，后续弹性元素与前一个对齐。
+
+`flex-end`: 从行尾开始排列，每行最后一个弹性元素与行尾对齐，其他元素与后一个对齐。
+
 <JustifyContent type="position" />
+:::
+
+::: details left & right
+`left`: 伸缩元素依次对齐容器左边缘。
+
+`right`: 伸缩元素依次对齐容器右边缘。
+
+<!-- <JustifyContent type="content" /> -->
+:::
 
 #### 5. align-items
+子元素沿flex容器交叉轴方向排列方式。
 
-<AlignItems />
+::: tip 语法
+align-items: normal | stretch | &lt;baseline-position&gt; | [ &lt;overflow-position&gt;? &lt;self-position&gt; ]
+
+where 
+
+&lt;baseline-position&gt; = [ first | last ]? baseline
+
+&lt;overflow-position&gt; = unsafe | safe
+
+&lt;self-position&gt; = center | start | end | self-start | self-end | flex-start | flex-end
+:::
 
 #### 6. align-content
 
 子元素在flex容器中交叉轴方向的空间分布，对单行弹性盒子模型（`flex-wrap: nowrap`）无效。
 
 ::: tip 语法
-align-content: <>
+align-content: normal | &lt;baseline-position&gt; | &lt;content-distribution&gt; | &lt;overflow-position&gt; ? &lt;content-position&gt;
+
+where 
+
+&lt;baseline-position&gt; = [ first | last ]? baseline
+
+&lt;content-distribution&gt; = space-between | space-around | space-evenly | stretch
+
+&lt;overflow-position&gt; = unsafe | safe
+
+&lt;content-position&gt; = center | start | end | flex-start | flex-end
 :::
 
-<AlignContent />
+<!-- <AlignContent /> -->
 
 ### 子元素基本属性
 
@@ -216,13 +242,25 @@ align-content: <>
 
 #### 1. flex-grow
 
-flex增长系数，表示在容器主轴方向占据空间的比例。
+flex增长系数，表示在容器主轴方向占据空间的比例，负值无效。
+
+::: tip 语法
+flex-grow: &lt;NUMBER&gt;;
+
+默认值：0
+:::
 
 <FlexGrow />
 
 #### 2. flex-shrink
 
-指定子元素的收缩规则，仅在默认所占空间大于容器空间时起效。
+指定子元素的收缩规则，仅在默认所占空间大于容器空间时起效，负值无效。
+
+::: tip 语法
+flex-shrink: &lt;NUMBER&gt;;
+
+默认值：1
+:::
 
 <FlexShrink />
 
@@ -230,14 +268,32 @@ flex增长系数，表示在容器主轴方向占据空间的比例。
 
 指定子元素在主轴方向上的初始大小。
 
+::: tip 语法
+flex-basis: content | &lt;width&gt;;
+
+默认值：auto
+:::
+
 <FlexBasis />
 
 #### 4. flex
 
 `flex-grow`、`flex-shrink`和`flex-basis`的缩写。
 
+::: tip 语法
+flex: &lt;flex-grow&gt; &lt;flex-shrink&gt; &lt;flex-basis&gt;;
+
+默认值：0 1 auto
+:::
+
 #### 5. order
 
 子元素在弹性容器中的排列顺序。
+
+::: tip 语法
+order: &lt;NUMBER&gt;;
+
+默认值：0
+:::
 
 <Order />

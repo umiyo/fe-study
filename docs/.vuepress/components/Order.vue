@@ -1,35 +1,19 @@
 <template>
 <div class="axis">
-    <div class="container row">
+    <div class="container row" style="width: 50%;">
         <span>主轴(start)</span>
         <i>row</i>
         <div class="flex-item">1</div>
-        <div class="flex-item">2</div>
-    </div>
-    <div class="container row-reverse">
-        <span>主轴(start)</span>
-        <i>row-reverse</i>
-        <div class="flex-item">1</div>
-        <div class="flex-item">2</div>
-    </div>
-    <div class="container column">
-        <span>主轴(start)</span>
-        <i>column</i>
-        <div class="flex-item">1</div>
-        <div class="flex-item">2</div>
-    </div>
-    <div class="container column-reverse">
-        <span>主轴(start)</span>
-        <i>column-reverse</i>
-        <div class="flex-item">1</div>
-        <div class="flex-item">2</div>
+        <div class="flex-item" style="order: -1;">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
     </div>
 </div>
 </template>
 
 <script>
 export default {
-    name: 'FlexDirection'
+    name: 'Order'
 }
 </script>
 

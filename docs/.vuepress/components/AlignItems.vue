@@ -29,7 +29,7 @@
 
 <script>
 export default {
-    name: 'FlexDirection'
+    name: 'AlignItems'
 }
 </script>
 

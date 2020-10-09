@@ -1,35 +1,20 @@
 <template>
 <div class="axis">
-    <div class="container row">
+    <div class="container row" style="width: 50%;">
         <span>主轴(start)</span>
         <i>row</i>
-        <div class="flex-item">1</div>
-        <div class="flex-item">2</div>
-    </div>
-    <div class="container row-reverse">
-        <span>主轴(start)</span>
-        <i>row-reverse</i>
-        <div class="flex-item">1</div>
-        <div class="flex-item">2</div>
-    </div>
-    <div class="container column">
-        <span>主轴(start)</span>
-        <i>column</i>
-        <div class="flex-item">1</div>
-        <div class="flex-item">2</div>
-    </div>
-    <div class="container column-reverse">
-        <span>主轴(start)</span>
-        <i>column-reverse</i>
-        <div class="flex-item">1</div>
-        <div class="flex-item">2</div>
+        <div class="flex-item auto" style="flex-grow: 0;">1</div>
+        <div class="flex-item auto" style="flex-grow: 1;">2</div>
+        <div class="flex-item auto" style="flex-grow: 2;">3</div>
+        <div class="flex-item auto" style="flex-grow: 3;">4</div>
+        <div class="flex-item auto" style="flex-grow: 4;">5</div>
     </div>
 </div>
 </template>
 
 <script>
 export default {
-    name: 'FlexDirection'
+    name: 'FlexGrow'
 }
 </script>
 
@@ -45,14 +30,5 @@ export default {
 }
 .row {
     flex-direction: row;
-}
-.row-reverse {
-    flex-direction: row-reverse;
-}
-.column {
-    flex-direction: column;
-}
-.column-reverse {
-    flex-direction: column-reverse;
 }
 </style>
